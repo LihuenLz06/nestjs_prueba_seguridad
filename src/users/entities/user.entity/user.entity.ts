@@ -8,7 +8,7 @@ import {
 } from 'typeorm'
 import { hash } from 'bcryptjs'
 
-@Entity('Usuarios')
+@Entity('usuarios')
 export class User {
   @PrimaryGeneratedColumn()
   id: number

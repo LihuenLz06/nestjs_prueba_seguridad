@@ -4,7 +4,7 @@ import { AuthController } from './auth.controller'
 import { PassportModule } from '@nestjs/passport'
 import { UsersModule } from 'src/users/users.module'
 import { LocalStrategy } from './strategies/local.strategy'
-import { JwtModule } from '@nestjs/jwt'
+import { JwtModule, JwtService } from '@nestjs/jwt'
 import { ConfigService } from '@nestjs/config'
 import { JWT_SECRET } from 'src/config/constants'
 import { JwtStrategy } from './strategies/jwt.strategy'
@@ -23,7 +23,7 @@ import { JwtStrategy } from './strategies/jwt.strategy'
       defaultStrategy: 'jwt',
     }),
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy, JwtService],
   controllers: [AuthController],
 })
 export class AuthModule {}

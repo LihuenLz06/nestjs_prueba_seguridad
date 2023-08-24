@@ -62,9 +62,9 @@ export class UsersService {
 
   async findOne (data: UserFindOne) {
     return await this.userRepository
-      .createQueryBuilder('user')
+      .createQueryBuilder('usuarios')
       .where({ data })
-      .addSelect('user.password')
+      .addSelect('usuarios.password')
       .getOne()
   }
 }
